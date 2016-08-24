@@ -61,22 +61,13 @@ The following section details how we tackled each step of the assignment in the 
 + Once this verification is complete, data tables from each needed file are loaded and a final check of the selection of WIDE or NARROW is made.  At this stage data tables for DATA, SUBJECTS, FEATURES and ACTIVITIES should all be available.
 
 1. Merge the training and the test sets to create one data set.
-
 + Merging of the training and test sets is done using the bind_rows() function from the dplyr package.  Once training and tests sets have been merged, checks are done to verify that data set order has been maintained.  FInally a similar merging is conducted on data sets for subjects and activities.
-
 2. Extract only the measurements on the mean and standard deviation for each measurement.
-
 + The grepl() function is used on the FEATURES data table to identify which measurements pertain to mean and standard deviation.  As described in the overview section this includes any features containing  <i>-mean()</i> or <i>-std()</i>.  This is then used to set which elements of the DATA set are to be retained.
-
 3. Use descriptive activity names to name the activities in the data set
-
 + Activity names are mapped from the ACTIVITY data tables to the DATA set by use of dplyr's inner_join() function.  select() is then used to remove the activity number field from the set.
-
 4. Appropriately labels the data set with descriptive variable names.
-
 + Descriptive variables are defined as outlined in the Overview section above.  The grepl() function is used to identify pertinent substrings of each feature to generate the descriptive label.  For NARROW sets, these then generate additional categorical variables needed to gather the set.  For WIDE sets, these are used to generate more descriptive variable names.
-
 5. From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
-
 + The DATA set from step 4 is then run through a list of dplyr piping statements in order to calculate the appropriate mean values of each source variable.  
 + The difference between NARROW and WIDE options is in the group_by() statement of the piping stream.  We note that while the group_by() statement differs, the actual  calculations are identical.
