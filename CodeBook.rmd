@@ -476,9 +476,9 @@ As noted in the ReadMe.rmd file, our version of run_analysis.R is capable of pro
 * <b>Description:</b> Denotes the directional-axis to which the measurement corresponds.
 * <b>Raw Data Set Variable:</b> Identified from features containing _-x_, _-y_, and _-z_.  FMagnitude variables were assigned no direction per the description in the raw data readme and features_info.txt files.
 * <b>Possible Values:</b> 
-    + x-axis  
-    + y-axis 
-    + z-axis 
+    + x.axis  
+    + y.axis 
+    + z.axis 
     + no_direction 
 * <b>Units:</b> Not Applicable
 
