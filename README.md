@@ -49,6 +49,7 @@ Output in the NARROW format utilizes the same decomposition as the wide format, 
 * <b>Domain</b> - The domain of the signal measurement, either time or frequency.
 * <b>Direction</b> - The direction, if any, of the signal, x-axis, y-axis, z-axis, or no direction.
 * <b>Sensor</b> - The device which detected or measured the signal, either accelerometer or gyroscope.
+
 Mean values of each source column by subject and acitivity are then stored in the <b>measure</b> variable.
 
 ## Review of run_analysis.R
