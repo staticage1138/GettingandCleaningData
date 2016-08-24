@@ -135,13 +135,13 @@ mean.std.features$signal[grepl("Mag",mean.std.features$feature) &
 mean.std.features$domain[grepl("^t",mean.std.features$feature)] <-  "time"
 mean.std.features$domain[grepl("^f",mean.std.features$feature)] <-  "frequency"
 
-mean.std.features$direction <- "no_direction"
+mean.std.features$direction <- "no-direction"
 mean.std.features$direction[grepl("-[Xx]$",
-                                  mean.std.features$feature)] <- "x_axis"
+                                  mean.std.features$feature)] <- "x-axis"
 mean.std.features$direction[grepl("-[Yy]$",
-                                  mean.std.features$feature)] <- "y_axis"
+                                  mean.std.features$feature)] <- "y-axis"
 mean.std.features$direction[grepl("-[Zz]$",
-                                  mean.std.features$feature)] <- "z_axis"
+                                  mean.std.features$feature)] <- "z-axis"
 
 mean.std.features$sensor[grepl("Acc",
                                mean.std.features$feature)] <-  "accelerometer"
@@ -154,12 +154,12 @@ mean.std.features$sensor[grepl("Gyro",
 if(outwidth=="NARROW") 
 {
         names(masterset)[3:68] <- mean.std.features$feature
-        outset <- masterset %>%
+        masterset <- masterset %>%
                         gather(key=feature,measure,-subject,-activity) %>%
                         inner_join(mean.std.features,by="feature") %>%
                         select(-feature,-feature.num)  
-        outset[,3:9]<-outset[,c(4:9,3)]
-        names(outset)[3:9]<-names(outset)[c(4:9,3)]
+        masterset[,3:9]<-masterset[,c(4:9,3)]
+        names(masterset)[3:9]<-names(masterset)[c(4:9,3)]
 }
 if(outwidth=="WIDE")
 {
