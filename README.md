@@ -61,6 +61,7 @@ The following section details how we tackled each step of the assignment in the 
 + Once this verification is complete, data tables from each needed file are loaded and a final check of the selection of WIDE or NARROW is made.  At this stage data tables for DATA, SUBJECTS, FEATURES and ACTIVITIES should all be available.
 
 1. Merge the training and the test sets to create one data set.
+
 + Merging of the training and test sets is done using the bind_rows() function from the dplyr package.  Once training and tests sets have been merged, checks are done to verify that data set order has been maintained.  FInally a similar merging is conducted on data sets for subjects and activities.
 
 2. Extract only the measurements on the mean and standard deviation for each measurement.
