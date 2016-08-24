@@ -137,11 +137,11 @@ mean.std.features$domain[grepl("^f",mean.std.features$feature)] <-  "frequency"
 
 mean.std.features$direction <- "no-direction"
 mean.std.features$direction[grepl("-[Xx]$",
-                                  mean.std.features$feature)] <- "x-axis"
+                                  mean.std.features$feature)] <- "x.axis"
 mean.std.features$direction[grepl("-[Yy]$",
-                                  mean.std.features$feature)] <- "y-axis"
+                                  mean.std.features$feature)] <- "y.axis"
 mean.std.features$direction[grepl("-[Zz]$",
-                                  mean.std.features$feature)] <- "z-axis"
+                                  mean.std.features$feature)] <- "z.axis"
 
 mean.std.features$sensor[grepl("Acc",
                                mean.std.features$feature)] <-  "accelerometer"
