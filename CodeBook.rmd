@@ -1,0 +1,497 @@
+## Overview
+
+As noted in the ReadMe.rmd file, our version of run_analysis.R is capable of producing tidy data sets in either a WIDE or NARROW format.  The set submitted for the assignment is in WIDE format, however, descriptions for both format have been provided. 
+
+### WIDE Format
+
+#### subject
+* <b>Description:</b> Numeric identifier designating individual performing in the trial.
+* <b>Raw Data Set Variable:</b> subject, from subject_train.txt and subject_test.txt files
+* <b>Possible Values:</b> Numbers between 1 and 30.
+* <b>Units:</b> Not Applicable
+
+#### activity
+* <b>Description:</b> Description of activity during which measurements were taken.
+* <b>Raw Data Set Variable:</b> activity, from y_test.txt and y_train.txt files, and activity_labels from corresponding activity_labels.txt file.
+* <b>Possible Values:</b> 
+    + WALKING  
+    + WALKING_UPSTAIRS 
+    + WALKING_DOWNSTAIRS 
+    + SITTING 
+    + STANDING 
+    + LAYING
+* <b>Units:</b> Not Applicable
+
+#### mean.body.acceleration.frequency.x-axis.accelerometer
+* <b>Description:</b> mean of body acceleration in the frequency domain, along x-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAcc-mean()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration.frequency.y-axis.accelerometer
+* <b>Description:</b> mean of body acceleration in the frequency domain, along y-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAcc-mean()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration.frequency.z-axis.accelerometer
+* <b>Description:</b> mean of body acceleration in the frequency domain, along z-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAcc-mean()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration.frequency.x-axis.accelerometer
+* <b>Description:</b> Standard deviation of body acceleration in the frequency domain, along x-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAcc-std()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration.frequency.y-axis.accelerometer
+* <b>Description:</b> Standard deviation of body acceleration in the frequency domain, along y-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAcc-std()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration.frequency.z-axis.accelerometer
+* <b>Description:</b> Standard deviation of body acceleration in the frequency domain, along z-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAcc-std()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.jerk.frequency.x-axis.accelerometer
+* <b>Description:</b> mean of body jerk in the frequency domain, along x-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAccJerk-mean()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.jerk.frequency.y-axis.accelerometer
+* <b>Description:</b> mean of body jerk in the frequency domain, along y-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAccJerk-mean()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.jerk.frequency.z-axis.accelerometer
+* <b>Description:</b> mean of body jerk in the frequency domain, along z-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAccJerk-mean()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.jerk.frequency.x-axis.accelerometer
+* <b>Description:</b> Standard deviation of body jerk in the frequency domain, along x-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAccJerk-std()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.jerk.frequency.y-axis.accelerometer
+* <b>Description:</b> Standard deviation of body jerk in the frequency domain, along y-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAccJerk-std()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.jerk.frequency.z-axis.accelerometer
+* <b>Description:</b> Standard deviation of body jerk in the frequency domain, along z-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAccJerk-std()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration_magnitude.frequency.no-direction.accelerometer
+* <b>Description:</b> mean of body acceleration magnitude in the frequency domain, along no-direction detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAccMag-mean()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration_magnitude.frequency.no-direction.accelerometer
+* <b>Description:</b> Standard deviation of body acceleration magnitude in the frequency domain, along no-direction detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyAccMag-std()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.jerk_magnitude.frequency.no-direction.accelerometer
+* <b>Description:</b> mean of body acceleration magnitude in the frequency domain, along no-direction detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyBodyAccJerkMag-mean()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.jerk_magnitude.frequency.no-direction.accelerometer
+* <b>Description:</b> Standard deviation of body acceleration magnitude in the frequency domain, along no-direction detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> fBodyBodyAccJerkMag-std()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.jerk_magnitude.frequency.no-direction.gyroscope
+* <b>Description:</b> mean of body acceleration magnitude in the frequency domain, along no-direction detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> fBodyBodyGyroJerkMag-mean()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.jerk_magnitude.frequency.no-direction.gyroscope
+* <b>Description:</b> Standard deviation of body acceleration magnitude in the frequency domain, along no-direction detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> fBodyBodyGyroJerkMag-std()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration_magnitude.frequency.no-direction.gyroscope
+* <b>Description:</b> mean of body acceleration magnitude in the frequency domain, along no-direction detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> fBodyBodyGyroMag-mean()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration_magnitude.frequency.no-direction.gyroscope
+* <b>Description:</b> Standard deviation of body acceleration magnitude in the frequency domain, along no-direction detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> fBodyBodyGyroMag-std()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration.frequency.x-axis.gyroscope
+* <b>Description:</b> mean of body acceleration in the frequency domain, along x-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> fBodyGyro-mean()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration.frequency.y-axis.gyroscope
+* <b>Description:</b> mean of body acceleration in the frequency domain, along y-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> fBodyGyro-mean()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration.frequency.z-axis.gyroscope
+* <b>Description:</b> mean of body acceleration in the frequency domain, along z-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> fBodyGyro-mean()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration.frequency.x-axis.gyroscope
+* <b>Description:</b> Standard deviation of body acceleration in the frequency domain, along x-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> fBodyGyro-std()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration.frequency.y-axis.gyroscope
+* <b>Description:</b> Standard deviation of body acceleration in the frequency domain, along y-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> fBodyGyro-std()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration.frequency.z-axis.gyroscope
+* <b>Description:</b> Standard deviation of body acceleration in the frequency domain, along z-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> fBodyGyro-std()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration.time.x-axis.accelerometer
+* <b>Description:</b> mean of body acceleration in the time domain, along x-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAcc-mean()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration.time.y-axis.accelerometer
+* <b>Description:</b> mean of body acceleration in the time domain, along y-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAcc-mean()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration.time.z-axis.accelerometer
+* <b>Description:</b> mean of body acceleration in the time domain, along z-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAcc-mean()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration.time.x-axis.accelerometer
+* <b>Description:</b> Standard deviation of body acceleration in the time domain, along x-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAcc-std()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration.time.y-axis.accelerometer
+* <b>Description:</b> Standard deviation of body acceleration in the time domain, along y-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAcc-std()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration.time.z-axis.accelerometer
+* <b>Description:</b> Standard deviation of body acceleration in the time domain, along z-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAcc-std()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.jerk.time.x-axis.accelerometer
+* <b>Description:</b> mean of body jerk in the time domain, along x-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAccJerk-mean()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.jerk.time.y-axis.accelerometer
+* <b>Description:</b> mean of body jerk in the time domain, along y-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAccJerk-mean()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.jerk.time.z-axis.accelerometer
+* <b>Description:</b> mean of body jerk in the time domain, along z-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAccJerk-mean()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.jerk.time.x-axis.accelerometer
+* <b>Description:</b> Standard deviation of body jerk in the time domain, along x-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAccJerk-std()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.jerk.time.y-axis.accelerometer
+* <b>Description:</b> Standard deviation of body jerk in the time domain, along y-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAccJerk-std()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.jerk.time.z-axis.accelerometer
+* <b>Description:</b> Standard deviation of body jerk in the time domain, along z-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAccJerk-std()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.jerk_magnitude.time.no-direction.accelerometer
+* <b>Description:</b> mean of body acceleration magnitude in the time domain, along no-direction detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAccJerkMag-mean()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.jerk_magnitude.time.no-direction.accelerometer
+* <b>Description:</b> Standard deviation of body acceleration magnitude in the time domain, along no-direction detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAccJerkMag-std()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration_magnitude.time.no-direction.accelerometer
+* <b>Description:</b> mean of body acceleration magnitude in the time domain, along no-direction detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAccMag-mean()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration_magnitude.time.no-direction.accelerometer
+* <b>Description:</b> Standard deviation of body acceleration magnitude in the time domain, along no-direction detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tBodyAccMag-std()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration.time.x-axis.gyroscope
+* <b>Description:</b> mean of body acceleration in the time domain, along x-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyro-mean()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration.time.y-axis.gyroscope
+* <b>Description:</b> mean of body acceleration in the time domain, along y-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyro-mean()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration.time.z-axis.gyroscope
+* <b>Description:</b> mean of body acceleration in the time domain, along z-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyro-mean()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration.time.x-axis.gyroscope
+* <b>Description:</b> Standard deviation of body acceleration in the time domain, along x-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyro-std()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration.time.y-axis.gyroscope
+* <b>Description:</b> Standard deviation of body acceleration in the time domain, along y-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyro-std()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration.time.z-axis.gyroscope
+* <b>Description:</b> Standard deviation of body acceleration in the time domain, along z-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyro-std()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.jerk.time.x-axis.gyroscope
+* <b>Description:</b> mean of body jerk in the time domain, along x-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyroJerk-mean()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.jerk.time.y-axis.gyroscope
+* <b>Description:</b> mean of body jerk in the time domain, along y-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyroJerk-mean()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.jerk.time.z-axis.gyroscope
+* <b>Description:</b> mean of body jerk in the time domain, along z-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyroJerk-mean()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.jerk.time.x-axis.gyroscope
+* <b>Description:</b> Standard deviation of body jerk in the time domain, along x-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyroJerk-std()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.jerk.time.y-axis.gyroscope
+* <b>Description:</b> Standard deviation of body jerk in the time domain, along y-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyroJerk-std()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.jerk.time.z-axis.gyroscope
+* <b>Description:</b> Standard deviation of body jerk in the time domain, along z-axis detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyroJerk-std()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.jerk_magnitude.time.no-direction.gyroscope
+* <b>Description:</b> mean of body acceleration magnitude in the time domain, along no-direction detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyroJerkMag-mean()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.jerk_magnitude.time.no-direction.gyroscope
+* <b>Description:</b> Standard deviation of body acceleration magnitude in the time domain, along no-direction detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyroJerkMag-std()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.body.acceleration_magnitude.time.no-direction.gyroscope
+* <b>Description:</b> mean of body acceleration magnitude in the time domain, along no-direction detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyroMag-mean()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.body.acceleration_magnitude.time.no-direction.gyroscope
+* <b>Description:</b> Standard deviation of body acceleration magnitude in the time domain, along no-direction detected by the gyroscope.
+* <b>Raw Data Set Feature:</b> tBodyGyroMag-std()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.gravity.acceleration.time.x-axis.accelerometer
+* <b>Description:</b> mean of gravity acceleration in the time domain, along x-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tGravityAcc-mean()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.gravity.acceleration.time.y-axis.accelerometer
+* <b>Description:</b> mean of gravity acceleration in the time domain, along y-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tGravityAcc-mean()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.gravity.acceleration.time.z-axis.accelerometer
+* <b>Description:</b> mean of gravity acceleration in the time domain, along z-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tGravityAcc-mean()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.gravity.acceleration.time.x-axis.accelerometer
+* <b>Description:</b> Standard deviation of gravity acceleration in the time domain, along x-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tGravityAcc-std()-X
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.gravity.acceleration.time.y-axis.accelerometer
+* <b>Description:</b> Standard deviation of gravity acceleration in the time domain, along y-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tGravityAcc-std()-Y
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.gravity.acceleration.time.z-axis.accelerometer
+* <b>Description:</b> Standard deviation of gravity acceleration in the time domain, along z-axis detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tGravityAcc-std()-Z
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### mean.gravity.acceleration_magnitude.time.no-direction.accelerometer
+* <b>Description:</b> mean of gravity acceleration magnitude in the time domain, along no-direction detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tGravityAccMag-mean()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+#### standard_deviation.gravity.acceleration_magnitude.time.no-direction.accelerometer
+* <b>Description:</b> Standard deviation of gravity acceleration magnitude in the time domain, along no-direction detected by the accelerometer.
+* <b>Raw Data Set Feature:</b> tGravityAccMag-std()
+* <b>Possible Values:</b> Numbers between -1 and 1.
+* <b>Units:</b> Normalized units.
+
+### NARROW Format
+
+#### subject
+* <b>Description:</b> Numeric identifier designating individual performing in the trial.
+* <b>Raw Data Set Variable:</b> subject, from subject_train.txt and subject_test.txt files
+* <b>Possible Values:</b> Numbers between 1 and 30.
+* <b>Units:</b> Not Applicable
+
+#### activity
+* <b>Description:</b> Description of activity during which measurements were taken.
+* <b>Raw Data Set Variable:</b> activity, from y_test.txt and y_train.txt files, and activity_labels from corresponding activity_labels.txt file.
+* <b>Possible Values:</b> 
+    + WALKING  
+    + WALKING_UPSTAIRS 
+    + WALKING_DOWNSTAIRS 
+    + SITTING 
+    + STANDING 
+    + LAYING
+* <b>Units:</b> Not Applicable
+
+#### calculation
+* <b>Description:</b> Categorical field noting whether variable was calculated using a mean or standard deviation in the raw data files.
+* <b>Raw Data Set Variables:</b> Identified from features containing _-mean()_ or _-std()_.
+* <b>Possible Values:</b> 
+    + mean  
+    + standard_deviation 
+* <b>Units:</b> Not Applicable
+
+#### source
+* <b>Description:</b> Denotes whether Butterworth filtering process utilized to generate the raw data file assigned the phone's Body or Gravity as the source of the reading.
+* <b>Raw Data Set Variable:</b> Identified from features containing _Body_ or _Gravity_.
+* <b>Possible Values:</b> 
+    + body  
+    + gravity 
+* <b>Units:</b> Not Applicable
+
+#### signal
+* <b>Description:</b> Describes the type of signal detected by the sensor during the subject's activity.
+* <b>Raw Data Set Variable:</b> Identified from features containing _Jerk_, _Mag_, and _JerkMag_.  Features containing none of these were assigned acceleration per the description in the raw data readme and features_info.txt files.
+* <b>Possible Values:</b> 
+    + acceleration  
+    + jerk 
+    + acceleration_magnitude 
+    + jerk_magnitude 
+* <b>Units:</b> Not Applicable
+
+#### domain
+* <b>Description:</b> Describes whether the measurement is in the time or has been shifted to the frequency domain via Fast Fourier Transform.
+* <b>Raw Data Set Variable:</b> Identified from features containing _t_ or _f_ as first character as outlined in features_info.txt.
+* <b>Possible Values:</b> 
+    + time  
+    + frequency 
+* <b>Units:</b> Not Applicable
+
+#### direction
+* <b>Description:</b> Denotes the directional-axis to which the measurement corresponds.
+* <b>Raw Data Set Variable:</b> Identified from features containing _-x_, _-y_, and _-z_.  FMagnitude variables were assigned no direction per the description in the raw data readme and features_info.txt files.
+* <b>Possible Values:</b> 
+    + x-axis  
+    + y-axis 
+    + z-axis 
+    + no_direction 
+* <b>Units:</b> Not Applicable
+
+#### sensor
+* <b>Description:</b> Notes which type of sensor recorded the measurment.
+* <b>Raw Data Set Variable:</b> Identified from features containing _Acc_ or _Gyro_.
+* <b>Possible Values:</b> 
+    + accelerometer  
+    + gyroscope 
+* <b>Units:</b> Not Applicable
+
+#### measure
+* <b>Description:</b> Subject-activity mean value of the underlying measurment described by calculation, source, signal, domain, direction, and sensor.
+* <b>Raw Data Set Variable:</b> Values for features as found in x_train.txt and x_test.txt raw data files.
+* <b>Possible Values:</b> Numbers between -1 and 1
+* <b>Units:</b> Normalized units.
